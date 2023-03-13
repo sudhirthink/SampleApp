@@ -19,6 +19,6 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
       - name: Deploy HTML code on Amazon S3
         env:
-          AWS_S3_BUCKET: my-bucket-sampl
+          BUCKET_NAME: my-bucket-sampl
         run: |
-          aws s3 sync . s3://$AWS_S3_BUCKET --exclude '.git*/*'
+          aws s3 sync . s3://$BUCKET_NAME --exclude '.git*/*'
